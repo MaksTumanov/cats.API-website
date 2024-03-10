@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cats website</title>
+
+    <link rel="shortcut icon" href="files/images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="files/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div id="left">
+            <a href=""><img class="logo" src="files/images/logo.png" alt="Котики"></a>
+        </div>
+
+        <div id="right">
+            <button id="showAddCatModal"><i class="fa-solid fa-plus"></i></button>
+            <button id="fetchCatsBtn"><i class="fa-solid fa-rotate-right"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <div id="catsContainer"></div>
+    </main>
+
+    <footer>
+        <p>©Mix_Tumaster 2024</p>
+        <a href="">Cats.API</a>
+    </footer>
+
+    <div id="addCatModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close"><i class="fa-solid fa-xmark"></i></span>
+            <h2>Add new cat</h2>
+            <form id="addCatForm">
+                <input type="number" id="addId" name="id" placeholder="ID" required>
+                <input type="text" id="name" name="name" placeholder="Имя котика" required>
+                <input type="number" id="age" name="age" placeholder="Возраст">
+                <input type="url" id="imageUrl" name="image" placeholder="Ссылка на изображение">
+                <input type="text" id="description" name="description" placeholder="Описание">
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="editCatModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close"><i class="fa-solid fa-xmark"></i></span>
+            <h2>Edit cat</h2>
+            <form id="editCatForm">
+                <input type="hidden" id="editId" name="id">
+                <input type="text" id="editName" name="name" placeholder="Имя котика" required>
+                <input type="number" id="editAge" name="age" placeholder="Возраст">
+                <input type="url" id="editImageUrl" name="image" placeholder="Ссылка на изображение">
+                <input type="text" id="editDescription" name="description" placeholder="Описание">
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="viewCatModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close"><i class="fa-solid fa-xmark"></i></span>
+            <h2>Cat info</h2>
+            <div id="catInfoContainer"></div>
+        </div>
+    </div>
+
+    <script src="files/script.js"></script>
+</body>
+
+</html>
